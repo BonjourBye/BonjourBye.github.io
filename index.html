@@ -1,5 +1,35 @@
-<h1><Title/h1>
-<p>Hello World !<p>
-<img
-     src="https://i.giphy.com/media/mCRJDo24UvJMA/giphy.webp"
-     alt="Grapefruit slice atop a pile of other slices">
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>getElementById example</title>
+  </head>
+  <body>
+    <script>
+    function addImg() {
+    const elem = document.getElementById('imagesContainer');
+    const image_url_input = document.getElementById('image_url');
+    var im = document.createElement("img");
+    im.setAttribute("src", image_url_input.value);
+    im.setAttribute("height", "50");
+    im.setAttribute("width", "50");
+    im.setAttribute("alt", "hello");
+    elem.appendChild(im);
+    }
+       
+    function changeColor(newColor) {
+    const elem = document.getElementById('para');
+    elem.style.color = newColor;
+    }
+    </script>
+
+    <button onclick="addImg();">Add</button>
+    <input type="text" id="image_url" name="image_url" value="https://media0.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif?cid=ecf05e47jdlgce4wy6bdezt2iyhb4iv6b4s71uquqnpic5c3&rid=giphy.gif&ct=g">
+    <div id="imagesContainer"></div>
+    
+    <p id="para">Some text here</p>
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+
+       
+  </body>
+</html>
